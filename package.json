@@ -17,7 +17,8 @@
     "express": "4.17.1",
     "jquery": "3.4.1",
     "morgan": "1.9.1",
-    "nodemon": "1.19.4"
+    "nodemon": "1.19.4",
+    "pug": "2.0.4"
   },
   "devDependencies": {
     "eslint": "6.6.0",
@@ -26,7 +27,9 @@
   },
   "nodemonConfig": {
     "restartable": "rs",
-    "ignore": ["node_modules/**/node_modules"],
+    "ignore": [
+      "node_modules/**/node_modules"
+    ],
     "delay": "2500",
     "env": {
       "NODE_ENV": "development",
