@@ -56,18 +56,17 @@ function router(nav) {
 
   bookRouter.route('/')
     .get((req, res) => {
-      const request = new sql.Request();
-
-      request.query('select * from books')
-        .then((result) => {
-          debug(result);
-          res.render('bookListView',
-            {
-              title: 'Library',
-              books: result.recordset,
-              nav
-            });
-        });
+      (async function query() {
+        const request = new sql.Request();
+        const result = await request.query('select * from books')
+        debug(result);
+        res.render('bookListView',
+          {
+            title: 'Library',
+            books: result.recordset,
+            nav
+          });
+      }());
     });
 
   bookRouter.route('/:id')
