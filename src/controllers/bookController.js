@@ -2,7 +2,6 @@ const { MongoClient, ObjectID } = require('mongodb');
 const debug = require('debug')('app:bookController');
 
 function bookController(bookService, nav) {
-
   function getIndex(req, res) {
     const url = 'mongodb://localhost:27017';
     const dbName = 'libraryApp';
